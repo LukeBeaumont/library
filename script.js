@@ -19,17 +19,17 @@ function addBookToLibrary() {
   let pages = document.querySelector("#pages").value;
   let read = document.querySelector("#read").checked;
   let newBook = new book(title, author, pages, read);
-  console.log(newBook);
+
   myLibrary.push(newBook);
 }
 newBookForm.addEventListener("submit", function (e) {
   e.preventDefault();
   addBookToLibrary();
-  addToList();
+  displayList();
   clearForm();
 });
 
-function addToList() {
+function displayList() {
   let display = document.querySelector(".book-list");
   display.innerHTML = "";
   for (let i = 0; i < myLibrary.length; i++) {
@@ -40,7 +40,7 @@ function addToList() {
       book.author
     }<br> Amount of pages: ${book.pages}<br> Read yet? ${
       book.read ? "Yes" : "No"
-    }<br><button id ='remove-btn'>X</button></div>`;
+    }<br><button id ='remove-btn' onclick='removeBook(${i})'>X</button></div>`;
     display.appendChild(bookEl);
   }
 }
@@ -50,4 +50,9 @@ function clearForm() {
   document.querySelector("#author").value = "";
   document.querySelector("#pages").value = "";
   document.querySelector("#read").checked = false;
+}
+
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  displayList();
 }
