@@ -36,11 +36,11 @@ function addToList() {
     let book = myLibrary[i];
 
     let bookEl = document.createElement("div");
-    bookEl.innerHTML = `<p>Title: ${book.title}, Author: ${
+    bookEl.innerHTML = `<div class ='card'>Title: ${book.title}<br> Author: ${
       book.author
-    }, Amount of pages: ${book.pages}, Read yet? ${
+    }<br> Amount of pages: ${book.pages}<br> Read yet? ${
       book.read ? "Yes" : "No"
-    }</p>`;
+    }<br><button id ='remove-btn'>X</button></div>`;
     display.appendChild(bookEl);
   }
 }

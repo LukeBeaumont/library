@@ -20,3 +20,26 @@ button {
 input {
   max-width: 120px;
 }
+
+.card {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#remove-btn {
+  background-color: white;
+  border: 1px solid red;
+  color: red;
+}
+
+#remove-btn:hover {
+  background-color: red;
+  color: black;
+}
