@@ -12,7 +12,13 @@ function book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+  //toggleRead = function () {
+    this.read = !this.read;
+  }
 }
+
+//book.prototype.toggleRead = 
+
 function addBookToLibrary() {
   let title = document.querySelector("#title").value;
   let author = document.querySelector("#author").value;
