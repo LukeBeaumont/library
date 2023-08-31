@@ -1,0 +1,17 @@
+.heading-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: left;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  background-color: darkgreen;
+  color: white;
+  padding: 10px;
+}
