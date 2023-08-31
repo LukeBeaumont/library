@@ -6,6 +6,7 @@
 .form-container {
   display: flex;
   justify-content: left;
+  padding: 20px;
 }
 
 button {
@@ -14,4 +15,8 @@ button {
   background-color: darkgreen;
   color: white;
   padding: 10px;
+}
+
+input {
+  max-width: 120px;
 }
