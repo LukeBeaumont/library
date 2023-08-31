@@ -1,12 +1,10 @@
-const bookList = [];
+const array = [];
 
 const book = document.querySelector(".newbook");
 
 book.addEventListener("click", addBook);
 
 function addBook() {
-    const title = prompt('Title?');
-
-    bookList.push(title);
-    console.log(bookList);
+  this.title = prompt("Title?");
+  this.author = prompt("Author?");
 }
