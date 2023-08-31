@@ -36,7 +36,9 @@ function addToList() {
     let book = myLibrary[i];
 
     let bookEl = document.createElement("div");
-    bookEl.innerHTML = `<p>${book.title}, ${book.author}, ${book.pages}, ${book.read}</p>`;
+    bookEl.innerHTML = `<p>${book.title}, ${book.author}, ${book.pages}, ${
+      book.read ? "Read" : "Not read yet"
+    }</p>`;
     display.appendChild(bookEl);
   }
 }
