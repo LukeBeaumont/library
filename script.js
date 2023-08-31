@@ -1,9 +1,9 @@
 let myLibrary = [];
 
+let newBookForm = document.querySelector("#new-book-form");
+
 const newBtn = document.querySelector(".new-btn");
 newBtn.addEventListener("click", function () {
-  let newBookForm = document.querySelector("#new-book-form");
-
   newBookForm.style.display = "block";
 });
 
@@ -21,9 +21,15 @@ function addBookToLibrary() {
   let newBook = new book(title, author, pages, read);
   console.log(newBook);
 }
-document
-  .querySelector("#new-book-form")
-  .addEventListener("submit", function () {
-    event.preventDefault();
-    alert("hello");
-  });
+newBookForm.addEventListener("submit", function () {
+  event.preventDefault();
+  addBookToLibrary();
+  clearForm();
+});
+
+function clearForm() {
+  document.querySelector("#title").value = "";
+  document.querySelector("#author").value = "";
+  document.querySelector("#pages").value = "";
+  document.querySelector("#read").checked = false;
+}
