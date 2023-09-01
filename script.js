@@ -12,7 +12,7 @@ function book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.toggleRead = function () {
+  this.toggle = function () {
     this.read = !this.read;
   };
 }
@@ -64,10 +64,6 @@ function removeBook(index) {
 }
 
 function toggleRead(index) {
-  myLibrary[index].toggleRead();
+  myLibrary[index].toggle();
   displayList();
 }
-
-//function toggleRead() {
-//this.read = !this.read;
-//}
