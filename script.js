@@ -12,6 +12,9 @@ function book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.toggleRead = function () {
+    this.read = !this.read;
+  };
 }
 
 function addBookToLibrary() {
@@ -39,9 +42,11 @@ function displayList() {
     let bookEl = document.createElement("div");
     bookEl.innerHTML = `<div class ='card'>Title: ${book.title}<br> Author: ${
       book.author
-    }<br> Amount of pages: ${book.pages}<br> Read yet? ${
+    }<br> Amount of pages: ${
+      book.pages
+    }<br><button id='toggle' onclick='toggleRead(${i})'> Read yet? ${
       book.read ? "Yes" : "No"
-    }<br><button id ='remove-btn' onclick='removeBook(${i})'>X</button></div>`;
+    }</button><br><button id ='remove-btn' onclick='removeBook(${i})'>X</button></div>`;
     display.appendChild(bookEl);
   }
 }
@@ -57,3 +62,12 @@ function removeBook(index) {
   myLibrary.splice(index, 1);
   displayList();
 }
+
+function toggleRead(index) {
+  myLibrary[index].toggleRead();
+  displayList();
+}
+
+//function toggleRead() {
+//this.read = !this.read;
+//}
