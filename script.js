@@ -7,14 +7,16 @@ newBtn.addEventListener("click", function () {
   newBookForm.style.display = "block";
 });
 
-function book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.toggle = function () {
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+  toggle() {
     this.read = !this.read;
-  };
+  }
 }
 
 function addBookToLibrary() {
